@@ -1,0 +1,27 @@
+/*
+Your calculator is going to contain functions for all of the basic math operators you typically find on calculators, so start by creating functions for the following items and testing them in your browser’s console:
+add
+subtract
+multiply
+divide
+*/
+
+const add = function (a, b) {
+  return a + b;
+};
+console.log(add(12, 3));
+
+const subtract = function (a, b) {
+  return a - b;
+};
+console.log(subtract(22, 2));
+
+const multiply = function (a, b) {
+  return a * b;
+};
+console.log(multiply(10, 10));
+
+const divide = function (a, b) {
+  return a / b;
+};
+console.log(divide(100, 5));
