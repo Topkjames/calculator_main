@@ -31,3 +31,21 @@ console.log(divide(100, 5));
 let number;
 let operator;
 let anotherNumber;
+
+/* Create a new function operate that takes an operator and two numbers and then calls one of the above functions on the numbers. */
+
+const operate = function (num1, operator, num2) {
+  if (operator == "+") {
+    return add(num1, num2);
+  } else if (operator == "-") {
+    return subtract(num1, num2);
+  } else if (operator == "*") {
+    return multiply(num1, num2);
+  } else if (operator == "/") {
+    return divide(num1, num2);
+  } else {
+    return "OOPS";
+  }
+};
+
+console.log(operate(1, "+", 9));
