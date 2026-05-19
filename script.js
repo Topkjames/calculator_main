@@ -25,3 +25,9 @@ const divide = function (a, b) {
   return a / b;
 };
 console.log(divide(100, 5));
+
+/* A calculator operation will consist of a number, an operator, and another number. For example, 3 + 5. Create three variables, one for each part of the operation. You’ll use these variables to update your display later. */
+
+let number;
+let operator;
+let anotherNumber;
