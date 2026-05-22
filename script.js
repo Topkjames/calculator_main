@@ -48,4 +48,5 @@ const operate = function (num1, operator, num2) {
   }
 };
 
+//Just a test!
 console.log(operate(1, "+", 9));
