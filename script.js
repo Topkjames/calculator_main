@@ -28,9 +28,9 @@ console.log(divide(100, 5));
 
 /* A calculator operation will consist of a number, an operator, and another number. For example, 3 + 5. Create three variables, one for each part of the operation. You’ll use these variables to update your display later. */
 
-let number;
-let operator;
-let anotherNumber;
+let firstNumber = "";
+let operator = "";
+let secondNumber = "";
 
 /* Create a new function operate that takes an operator and two numbers and then calls one of the above functions on the numbers. */
 
@@ -50,3 +50,19 @@ const operate = function (num1, operator, num2) {
 
 //Just a test!
 console.log(operate(1, "+", 9));
+
+/* Create the functions that update one of your number variables when the calculator’s digit buttons are clicked. Your calculator’s display should also update to reflect the value of that number variable. */
+
+let screen = document.querySelector("#screen");
+
+const numbersButton = document.querySelectorAll(".number");
+
+let displayValue = "";
+
+numbersButton.forEach((button) => {
+  button.addEventListener("click", () => {
+    displayValue += button.textContent;
+
+    screen.value = displayValue;
+  });
+});
