@@ -22,6 +22,9 @@ const multiply = function (a, b) {
 console.log(multiply(10, 10));
 
 const divide = function (a, b) {
+  if (b === 0) {
+    return "Nope, can't divide by zero!"
+  } 
   return a / b;
 };
 console.log(divide(100, 5));
@@ -74,6 +77,13 @@ const operators = document.querySelectorAll(".operate");
 
 operators.forEach((button) => {
   button.addEventListener("click", () => {
+    if (operator && displayValue.endsWith(operator)) {
+      operator = button.textContent;
+      displayValue = displayValue.slice(0, -1) + operator;
+      screen.value = displayValue;
+      return;
+    }
+
     firstNumber = displayValue;
     operator = button.textContent;
 

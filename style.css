@@ -81,12 +81,28 @@ button {
   cursor: pointer;
 }
 
+.operate {
+  background-color: var(--more-lighter);
+  color: var(--display);
+  box-shadow: 0 0 5px var(--first-color);
+}
+
+.operate:hover {
+  color: var(--display);
+}
+
 button:hover {
   background-color: var(--lighter);
 }
 
 button:active {
   background-color: var(--more-lighter);
+}
+
+.equals {
+  background-color: var(--second-coloor);
+  box-shadow: 0 0 5px var(--first-color);
+  color: var(--more-lighter);
 }
 
 .extra-btn {
