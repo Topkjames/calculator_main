@@ -66,3 +66,30 @@ numbersButton.forEach((button) => {
     screen.value = displayValue;
   });
 });
+
+/* Make the calculator work! You’ll need to store the first and second numbers input by the user and then operate() on them when the user presses the = button, according to the operator that was selected between the numbers.
+ */
+
+const operators = document.querySelectorAll(".operate");
+
+operators.forEach((button) => {
+  button.addEventListener("click", () => {
+    firstNumber = displayValue;
+    operator = button.textContent;
+
+    displayValue = "";
+    screen.value = operator;
+  });
+});
+
+const equals = document.querySelector(".equals");
+
+equals.addEventListener("click", () => {
+  secondNumber = displayValue;
+
+  let result = operate(Number(firstNumber), operator, Number(secondNumber));
+
+  screen.value = result;
+
+  displayValue = result.toString();
+});
