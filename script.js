@@ -103,6 +103,7 @@ const equals = document.querySelector(".equals");
 
 equals.addEventListener("click", () => {
   secondNumber = displayValue;
+  if (displayValue === "") return;
 
   let result = operate(Number(firstNumber), operator, Number(secondNumber));
   if (typeof result === "number") {
