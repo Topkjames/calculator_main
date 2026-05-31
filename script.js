@@ -23,8 +23,8 @@ console.log(multiply(10, 10));
 
 const divide = function (a, b) {
   if (b === 0) {
-    return "Nope, can't divide by zero!"
-  } 
+    return "Nope, can't divide by zero!";
+  }
   return a / b;
 };
 console.log(divide(100, 5));
@@ -102,4 +102,28 @@ equals.addEventListener("click", () => {
   screen.value = result;
 
   displayValue = result.toString();
+});
+
+const allClear = document.querySelector("#all-clear");
+
+allClear.addEventListener("click", () => {
+  displayValue = "";
+  screen.value = "";
+  firstNumber = "";
+  operator = "";
+  secondNumber = "";
+});
+
+const clearButton = document.querySelector("#clear-btn");
+
+clearButton.addEventListener("click", () => {
+  displayValue = "";
+  screen.value = "";
+});
+
+const backspace = document.querySelector("#backspace");
+
+backspace.addEventListener("click", () => {
+  displayValue = displayValue.slice(0, -1);
+  screen.value = displayValue;
 });
