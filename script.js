@@ -56,6 +56,11 @@ console.log(operate(1, "+", 9));
 
 /* Create the functions that update one of your number variables when the calculator’s digit buttons are clicked. Your calculator’s display should also update to reflect the value of that number variable. */
 
+function formatNumber(numString) {
+  if (numString === "") return "";
+  return Number(numString).toLocaleString("en-US");
+}
+
 let screen = document.querySelector("#screen");
 
 const numbersButton = document.querySelectorAll(".number");
@@ -66,7 +71,8 @@ numbersButton.forEach((button) => {
   button.addEventListener("click", () => {
     displayValue += button.textContent;
 
-    screen.value = displayValue;
+    screen.value = formatNumber(displayValue);
+    screen.scrollLeft = screen.scrollWidth;
   });
 });
 
@@ -80,7 +86,7 @@ operators.forEach((button) => {
     if (operator && displayValue.endsWith(operator)) {
       operator = button.textContent;
       displayValue = displayValue.slice(0, -1) + operator;
-      screen.value = displayValue;
+      screen.value = formatNumber(displayValue);
       return;
     }
 
@@ -89,6 +95,7 @@ operators.forEach((button) => {
 
     displayValue = "";
     screen.value = operator;
+    screen.scrollLeft = screen.scrollWidth;
   });
 });
 
@@ -98,8 +105,12 @@ equals.addEventListener("click", () => {
   secondNumber = displayValue;
 
   let result = operate(Number(firstNumber), operator, Number(secondNumber));
+  if (typeof result === "number") {
+    result = Math.round(result * 1000) / 1000;
+  }
 
-  screen.value = result;
+  screen.value = formatNumber(result);
+  screen.scrollLeft = screen.scrollWidth;
 
   displayValue = result.toString();
 });
